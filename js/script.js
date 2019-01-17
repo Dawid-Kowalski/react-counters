@@ -14,12 +14,33 @@ class Counter extends React.Component {
 		value: 0
 	}
 
+	increment = event => {
+		this.setState({
+			value: this.state.value + 1
+		})
+	}
+
+	decrement = event => {
+		this.setState({
+			value: this.state.value - 1
+		})
+	}
+
+	setNull = event => {
+		this.setState({
+			value: 0
+		})
+	}
+
 
 	render() {
 		return (
 			<div>
 				<p>{this.props.title}</p>
 				<p>{this.state.value}</p>
+				<button onClick={this.increment}>dodaj</button>
+				<button onClick={this.decrement}>odejmij</button>
+				<button onClick={this.setNull}>wyzeruj</button>
 			</div>
 		)
 	}
